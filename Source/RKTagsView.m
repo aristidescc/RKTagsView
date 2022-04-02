@@ -467,7 +467,7 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
   [self layoutIfNeeded];
   // scroll if needed
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    if (_scrollsHorizontally) {
+    if (self->_scrollsHorizontally) {
       if (self.scrollView.contentSize.width > self.bounds.size.width) {
         CGPoint leftOffset = CGPointMake(self.scrollView.contentSize.width - self.bounds.size.width, -self.scrollView.contentInset.top);
         [self.scrollView setContentOffset:leftOffset animated:YES];
